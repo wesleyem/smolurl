@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: smolurl
+  data:
+    mongodb:
+      authentication-database: admin
+      username: rootuser
+      password: rootpass
+      database: wesleyem
+      port: 27017
+      host: wsl
