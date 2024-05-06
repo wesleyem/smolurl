@@ -17,6 +17,4 @@ public interface SmolUrlService {
 
     List<SmolUrl> findAll();
 
-    SmolUrl findByTargetUrl(String targetUrl);
-
 }

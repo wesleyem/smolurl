@@ -77,9 +77,4 @@ public class SmolUrlServiceImpl implements SmolUrlService {
         return smolUrlRepository.findAll();
     }
 
-    @Override
-    public SmolUrl findByTargetUrl(String targetUrl) {
-        return smolUrlRepository.findItemByTargetUrl(targetUrl);
-    }
-
 }

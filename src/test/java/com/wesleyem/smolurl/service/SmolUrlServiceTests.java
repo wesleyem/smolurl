@@ -1,5 +1,6 @@
 package com.wesleyem.smolurl.service;
 
+import com.wesleyem.smolurl.exceptions.NoSuchElementFoundException;
 import com.wesleyem.smolurl.model.SmolUrl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,6 +11,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration
@@ -42,11 +44,6 @@ public class SmolUrlServiceTests {
     }
 
     @Test
-    void getOneSmolUrlByTargetUrl() {
-        smolUrlService.findByTargetUrl(HTTPS_WESLEYEM_COM);
-    }
-
-    @Test
     void updateOneSmolUrl() {
         SmolUrl updateMe = smolUrlService.findAll().getLast();
         updateMe.setExpires(updateMe.getCreated().plusDays(System.currentTimeMillis() % 3));
@@ -59,7 +56,8 @@ public class SmolUrlServiceTests {
     void deleteOneSmolUrl() {
         SmolUrl deleteMe = smolUrlService.findAll().getFirst();
         smolUrlService.delete(deleteMe.getId());
-        SmolUrl deleted = smolUrlService.get(deleteMe.getId());
-        assertThat(deleted.getTargetUrl()).isEqualTo(WEB_ROOT);
+        NoSuchElementFoundException exception = assertThrows(NoSuchElementFoundException.class, () ->
+                smolUrlService.get(deleteMe.getId())
+        );
     }
 }
