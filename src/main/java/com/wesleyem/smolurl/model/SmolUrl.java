@@ -1,14 +1,11 @@
 package com.wesleyem.smolurl.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
-
-import java.beans.ConstructorProperties;
 import java.time.LocalDate;
 
 @Document(collection = "smolurls")

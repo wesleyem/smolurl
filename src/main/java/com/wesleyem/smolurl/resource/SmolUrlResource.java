@@ -2,12 +2,10 @@ package com.wesleyem.smolurl.resource;
 
 import com.wesleyem.smolurl.exceptions.ConflictingIdsGivenException;
 import com.wesleyem.smolurl.model.SmolUrl;
-import com.wesleyem.smolurl.repository.SmolUrlRepository;
 import com.wesleyem.smolurl.service.SmolUrlService;
 import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.http.HttpStatus;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

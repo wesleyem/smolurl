@@ -1,6 +1,5 @@
 package com.wesleyem.smolurl;
 
-import com.wesleyem.smolurl.repository.SmolUrlRepository;
 import com.wesleyem.smolurl.service.impl.SmolUrlServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;

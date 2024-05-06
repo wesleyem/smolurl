@@ -46,11 +46,6 @@ public class SmolUrlServiceImpl implements SmolUrlService {
         return NanoIdUtils.randomNanoId(new SecureRandom(), SmolUrlCharset.DEFAULT_ALPHABET.getCharArray(), DEFAULT_ID_LENGTH);
     }
 
-    private Optional<SmolUrl> getSmolUrlOptional(String id) {
-        log.info("Trying to find the SmolUrl using id: {}", id);
-        return smolUrlRepository.findById(id);
-    }
-
     @Override
     public SmolUrl get(String id) {
         log.info("Trying to find the SmolUrl using id: {}", id);
